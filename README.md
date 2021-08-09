@@ -1,7 +1,7 @@
 ## React Online Store for clothing company PlatForma
 
 - See the project on Netlify
-- Project is inspired by React Comfy Store project from (John Smilga's React tutorial)[https://www.udemy.com/course/react-tutorial-and-projects-course/learn/lecture/23467010#content]
+- Project is inspired by React Comfy Store project from [John Smilga's React tutorial](https://www.udemy.com/course/react-tutorial-and-projects-course/learn/lecture/23467010#content)
 - The online store consist of:
   - Home page with navbar, hero, featured products, special services, sign up form
   - Simple about page
@@ -16,9 +16,12 @@
   - Shopping cart
     - Change the product qauntity
     - Delete button, cleare the cart
+- CSS: [using styled components](https://styled-components.com)
+  - Responsive design; switching between navbar and sidebar navigation
 - User authification
 
-## Notes from John Smilga
+
+## Notes
 
 #### Older React Version
 
@@ -40,3 +43,6 @@
 
 .env file in the root
 FAST_REFRESH=FALSE
+
+#### 
+_redirect file in public is for Netlify, so that react router and netlify work together 
