@@ -1,12 +1,28 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import heroBcg from '../assets/hero-bcg.jpeg'
-import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import heroBcg from '../assets/hero-bcg2.jpg';
+import heroBcg2 from '../assets/hero-bcg3.jpg';
 
 const Hero = () => {
-  return <h4>hero</h4>
-}
+  return (
+    <Wrapper className='section-center'>
+      <article className='content'>
+        <h1>
+          Women's Clothing <br /> and Accessories handmade by PlatForma
+        </h1>
+        <p>Original design, ethically handcrafted</p>
+        <Link to='/products' className='btn hero-btn'>
+          shop now
+        </Link>
+      </article>
+      <article className='img-container'>
+        <img src={heroBcg} alt='platforma' className='main-img' />
+        <img src={heroBcg2} alt='platforma' className='accent-img' />
+      </article>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   min-height: 60vh;
@@ -68,6 +84,6 @@ const Wrapper = styled.section`
       border-radius: var(--radius);
     }
   }
-`
+`;
 
-export default Hero
+export default Hero;

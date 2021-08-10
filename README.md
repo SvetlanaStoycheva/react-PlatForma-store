@@ -5,6 +5,7 @@
 - The online store consist of:
   - Home page with navbar, hero, featured products, special services, sign up form
   - Simple about page
+  - Simple error page
   - All products page:
     - All compnay products are comming from the Api.
     - Filters by category, occasion, colors, price, free shipping. The filters are combining.
@@ -19,7 +20,6 @@
 - CSS: [using styled components](https://styled-components.com)
   - Responsive design; switching between navbar and sidebar navigation
 - User authification
-
 
 ## Notes
 
@@ -44,5 +44,6 @@
 .env file in the root
 FAST_REFRESH=FALSE
 
-#### 
-_redirect file in public is for Netlify, so that react router and netlify work together 
+####
+
+\_redirect file in public is for Netlify, so that react router and netlify work together

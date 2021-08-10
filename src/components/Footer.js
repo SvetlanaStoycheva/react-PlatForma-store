@@ -1,14 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 const Footer = () => {
-  return <Wrapper>
-    <h5>
-      &copy; {new Date().getFullYear()}
-      <span> PlatForma </span>
+  return (
+    <Wrapper>
+      <h5>
+        &copy; {new Date().getFullYear()}
+        <span> PlatForma </span>
       </h5>
       <h5>All rights reserved</h5>
-  </Wrapper>
-}
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.footer`
   height: 5rem;
@@ -16,7 +18,7 @@ const Wrapper = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--clr-black);
+  background: hsl(22, 31%, 81%);
   text-align: center;
   span {
     color: var(--clr-primary-5);
@@ -32,6 +34,6 @@ const Wrapper = styled.footer`
   @media (min-width: 776px) {
     flex-direction: row;
   }
-`
+`;
 
-export default Footer
+export default Footer;
