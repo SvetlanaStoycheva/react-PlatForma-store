@@ -2,6 +2,8 @@
 
 - See the project on Netlify
 - Project is inspired by React Comfy Store project from [John Smilga's React tutorial](https://www.udemy.com/course/react-tutorial-and-projects-course/learn/lecture/23467010#content)
+
+- The products data is stored and controled in graphical interface Airtable. As a server are used serverless netlify functions. There are two endpoints, one for all the products and one for single product with additional data in it.
 - The online store consist of:
   - Home page with navbar, hero, featured products, special services, sign up form
   - Simple about page
@@ -17,11 +19,12 @@
   - Shopping cart
     - Change the product qauntity
     - Delete button, cleare the cart
-- CSS: [using styled components](https://styled-components.com)
+- CSS: using styled components
   - Responsive design; switching between navbar and sidebar navigation
+- Format price. The prices are set in the smallest unit(cents). All calculation in the cart are done in cents in order to avoid bugs and price mistakes. Prices are displayed after formatting.
 - User authification
 
-## Notes
+#### Notes
 
 #### Older React Version
 
