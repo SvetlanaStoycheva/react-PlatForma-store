@@ -43,9 +43,9 @@ const SingleProductPage = () => {
     return <Error />;
   }
 
-  const { id: scu, fields } = product;
-  console.log(product);
-  console.log(fields);
+  const { id: sku, fields } = product;
+  // console.log(product);
+  // console.log(fields);
   if (fields) {
     const {
       category,
@@ -53,7 +53,7 @@ const SingleProductPage = () => {
       desc,
       image,
       name,
-      accasion,
+      occasion,
       price,
       reviews,
       stars,
@@ -67,12 +67,34 @@ const SingleProductPage = () => {
           <Link to='/products' className='btn'>
             back to products
           </Link>
-          <div className='product-center'></div>
+          <div className='product-center'>
+            <ProductImages images={image} />
+            <section className='content'>
+              <h2>{name}</h2>
+              <Stars stars={stars} reviews={reviews} />
+              <h5 className='price'>{formatPrice(price)}</h5>
+              <p className='desc'>{desc}</p>
+              <p className='info'>
+                <span>Available : </span>
+                {stock > 0 ? 'In stock' : 'Out of stock'}
+              </p>
+              <p className='info'>
+                <span>SKU : </span>
+                {sku}
+              </p>
+              <p className='info'>
+                <span>Occasion : </span>
+                {occasion}
+              </p>
+              <hr />
+              {stock > 0 && <AddToCart id={id} {...fields} />}
+            </section>
+          </div>
         </div>
       </Wrapper>
     );
   }
-  return <h4>single product</h4>;
+  return <h2>single page</h2>;
 };
 
 const Wrapper = styled.main`

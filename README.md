@@ -16,6 +16,7 @@
   - Single product page:
     - Change the number of items in the cart. This qauntity is limited by the product stock.
     - Available product colors are displayed
+    - Reviews with stars are displayed
   - Shopping cart
     - Change the product qauntity
     - Delete button, cleare the cart
