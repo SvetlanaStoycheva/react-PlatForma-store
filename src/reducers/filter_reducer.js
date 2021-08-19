@@ -11,11 +11,22 @@ import {
 
 const filter_reducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
+    const prices = action.payload.reduce((acc, curr) => {
+      acc.push(curr.price);
+      acc.sort((a, b) => a - b);
+      return acc;
+    }, []);
+
     //it needs to be with spread operator... bc otherwise both all_ and filtered_ point to the same place in the memory in JS. And when we changed the one we will be changing the other too. So we are coping the values, we are not referencing to the same place in the memory.
     return {
       ...state,
       all_products: [...action.payload],
       filtered_products: [...action.payload],
+      filters: {
+        ...state.filters,
+        min_price: prices[0],
+        max_price: prices[prices.length - 1],
+      },
     };
   }
   if (action.type === SET_GRIDVIEW) {
@@ -50,6 +61,66 @@ const filter_reducer = (state, action) => {
       );
     }
     return { ...state, filtered_products: newProducts };
+  }
+  if (action.type === UPDATE_FILTERS) {
+    const [name, value] = action.payload;
+    return {
+      ...state,
+      filters: { ...state.filters, [name]: value },
+    };
+  }
+  if (action.type === FILTER_PRODUCTS) {
+    const { all_products } = state;
+    const {
+      text,
+      category,
+      occasion,
+      color,
+      price,
+      linen,
+      max_price,
+    } = state.filters;
+    let tempProducts = [...all_products];
+
+    if (text) {
+      tempProducts = tempProducts.filter((item) =>
+        item.name.toLowerCase().startsWith(text)
+      );
+    }
+    if (category !== 'all') {
+      tempProducts = tempProducts.filter((item) => item.category === category);
+    }
+    if (occasion !== 'all') {
+      tempProducts = tempProducts.filter((item) => item.occasion === occasion);
+    }
+    if (color !== 'all') {
+      tempProducts = tempProducts.filter((item) => {
+        return item.colors.find((c) => c === color);
+      });
+    }
+    if (price > 0 && price < max_price) {
+      tempProducts = tempProducts.filter((item) => item.price <= price);
+    }
+    if (linen === 'true') {
+      tempProducts = tempProducts.filter((item) => item.linen === 'true');
+    }
+
+    return { ...state, filtered_products: tempProducts };
+  }
+  if (action.type === CLEAR_FILTERS) {
+    return {
+      ...state,
+      // filtered_products: state.all_products,
+      filters: {
+        ...state.filters,
+        text: '',
+        occasion: 'all',
+        category: 'all',
+        color: 'all',
+        price: state.filters.max_price,
+        linen: '',
+      },
+    };
   }
   // return state;
   throw new Error(`No Matching "${action.type}" - action type`);

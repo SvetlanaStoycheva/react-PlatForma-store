@@ -9,10 +9,11 @@
   - Simple about page
   - Simple error page
   - All products page:
-    - All compnay products are comming from the Api.
+    - All company products are comming from a surverless functions Api.
+    - Sorting form which is sorting by price and name
     - Filters by category, occasion, colors, price, free shipping. The filters are combining.
     - Two options to display the products, column and row layout.
-    - We display how many products we have in certain filter. Sorting by price and name
+    - We display how many products we have in certain filter.
   - Single product page:
     - Change the number of items in the cart. This qauntity is limited by the product stock.
     - Available product colors are displayed

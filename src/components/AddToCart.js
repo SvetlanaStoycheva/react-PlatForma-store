@@ -77,8 +77,8 @@ const Wrapper = styled.section`
   }
   .color-btn {
     display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     background: #222;
     margin-right: 0.5rem;
