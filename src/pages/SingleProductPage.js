@@ -87,7 +87,7 @@ const SingleProductPage = () => {
                 {occasion}
               </p>
               <hr />
-              {stock > 0 && <AddToCart id={id} {...fields} />}
+              {stock > 0 && <AddToCart id={id} fields={fields} />}
             </section>
           </div>
         </div>

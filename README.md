@@ -21,6 +21,7 @@
   - Shopping cart
     - Change the product qauntity
     - Delete button, cleare the cart
+    - save the current cart on the local storage in order to persist tha data between the renders
 - CSS: using styled components
   - Responsive design; switching between navbar and sidebar navigation
 - Format price. The prices are set in the smallest unit(cents). All calculation in the cart are done in cents in order to avoid bugs and price mistakes. Prices are displayed after formatting.
