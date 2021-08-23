@@ -1,6 +1,6 @@
 ## React Online Store for clothing company PlatForma
 
-- See the project on Netlify
+- [See the project on Netlify](https://sweta-react-store-platforma.netlify.app)
 - Project is inspired by React Comfy Store project from [John Smilga's React tutorial](https://www.udemy.com/course/react-tutorial-and-projects-course/learn/lecture/23467010#content)
 
 - The product data is stored and controlled in graphical interface Airtable. As a server is used serverless netlify functions. There are two endpoints, one for all the products and one for single product with additional data in it.
