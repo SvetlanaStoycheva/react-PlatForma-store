@@ -8,9 +8,6 @@ import { CartProvider } from './context/cart_context';
 import { UserProvider } from './context/user_context';
 import { Auth0Provider } from '@auth0/auth0-react';
 
-//dev-b9mizq5f.eu.auth0.com
-//eKqOiyZnGGe417fxIxnFp2Q0xmatCDH8
-
 ReactDOM.render(
   <ProductsProvider>
     <FilterProvider>
