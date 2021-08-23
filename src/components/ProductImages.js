@@ -15,13 +15,13 @@ const ProductImages = ({ images }) => {
 
   return (
     <Wrapper>
-      <img src={main} alt='main image' className='main' />
+      <img src={main} alt='platforma' className='main' />
       <div className='gallery'>
         {urls.map((item, index) => {
           return (
             <img
               src={item}
-              alt='product photo'
+              alt='platforma'
               key={index}
               onClick={() => setMain(urls[index])}
               className={`${item === main ? 'active' : null}`}
@@ -31,8 +31,6 @@ const ProductImages = ({ images }) => {
       </div>
     </Wrapper>
   );
-
-  return <h4>product images</h4>;
 };
 
 const Wrapper = styled.section`

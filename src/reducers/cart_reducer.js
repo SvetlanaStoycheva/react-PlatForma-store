@@ -18,6 +18,7 @@ const cart_reducer = (state, action) => {
             tempItem.amount = tempItem.max;
           }
         }
+        return item;
       });
       return { ...state };
     } else {
@@ -34,9 +35,8 @@ const cart_reducer = (state, action) => {
     }
   }
   if (action.type === REMOVE_CART_ITEM) {
-    const { id } = action.payload;
+    const tempCart = state.cart.filter((item) => item.id !== action.payload);
 
-    const tempCart = state.cart.filter((item) => item.id !== id);
     return { ...state, cart: tempCart };
   }
   if (action.type === CLEAR_CART) {

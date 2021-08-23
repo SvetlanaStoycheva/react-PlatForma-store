@@ -34,6 +34,8 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeItem = (id) => {
+    console.log(id);
+
     dispatch({ type: REMOVE_CART_ITEM, payload: id });
   };
 
